@@ -41,6 +41,9 @@ body {
   height: 100%;
   font-family: 'Lato', sans-serif; }
 
+a {
+  color: inherit !important; }
+
 #hero {
   position: absolute;
   width: 100%;
@@ -68,7 +71,8 @@ body {
       text-transform: uppercase; }
   #hero #countdown {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    margin: 40px 0; }
     @media (min-width: 576px) {
       #hero #countdown {
         flex-direction: row; } }
