@@ -11,6 +11,10 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+a {
+    color: inherit!important;
+}
+
 #hero {
     position: absolute;
     width: 100%;
@@ -45,6 +49,7 @@ body {
     #countdown  {
         display: flex;
         flex-direction: column;
+        margin: 40px 0;
         @include sm () {
             flex-direction: row;
         }
