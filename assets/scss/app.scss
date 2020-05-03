@@ -1,6 +1,8 @@
-@import './modules/breakpoints.scss';
-
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400&display=swap');
+
+@import './modules/breakpoints.scss';
+@import './modules/colors.scss';
+@import './modules/buttons.scss';
 
 body {
     margin: 0;
@@ -20,6 +22,7 @@ body {
     align-items: center;
 
     #title {
+        margin-top: auto;
         max-width: 80%;
         @include md () {
             max-width: 70%;
@@ -97,6 +100,17 @@ body {
             font-size: 3em;
             font-weight: 700;
             opacity: 0.5;
+        }
+    }
+
+    #more-info {
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: 10px;
+        max-width: 80%;
+        font-weight: 300;
+        @include md () {
+            max-width: 70%;
         }
     }
 }
