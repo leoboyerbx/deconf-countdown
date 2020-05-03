@@ -5,9 +5,9 @@ const $ = document.querySelector.bind(document)
 
 document.addEventListener('DOMContentLoaded', () => {
   const daysNumber = new CountdownNumber($('#days-number'))
-  const hoursNumber = new CountdownNumber($('#hours-number'))
-  const minutesNumber = new CountdownNumber($('#minutes-number'))
-  const secondsNumber = new CountdownNumber($('#seconds-number'))
+  const hoursNumber = new CountdownNumber($('#hours-number'), 24)
+  const minutesNumber = new CountdownNumber($('#minutes-number'), 60)
+  const secondsNumber = new CountdownNumber($('#seconds-number'), 60)
 
   function onUpdateCounter (callback) {
     const timespan = countdown(null, new Date(2020, 4, 11), countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS)

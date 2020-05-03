@@ -1,7 +1,8 @@
 class CountdownNumber {
-  constructor (element) {
+  constructor (element, maxVal = null) {
     this.element = element
     this.previousValue = element.innerText
+    this.maxVal = maxVal
   }
 
   setValue (value) {
@@ -13,7 +14,7 @@ class CountdownNumber {
     setTimeout(() => {
       this.element.classList.remove('out')
       this.element.innerText = value
-      this.previousValue = value > 0 ? value : 60
+      this.previousValue = value > 0 ? value : this.maxVal ? this.maxVal : value
       this.element.classList.add('in')
     }, 250)
     return true
