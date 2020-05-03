@@ -46,10 +46,16 @@ body {
   width: 100%;
   height: 100%;
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
+  overflow-y: scroll; }
+  @media (min-width: 768px) {
+    #hero {
+      overflow-y: hidden; } }
+  #hero #hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; }
   #hero #title {
     margin-top: auto;
     max-width: 80%; }
@@ -110,11 +116,18 @@ body {
   #hero #more-info {
     text-align: center;
     margin-top: auto;
-    margin-bottom: 10px;
     max-width: 80%;
-    font-weight: 300; }
+    font-weight: 300;
+    font-size: 1.1em; }
     @media (min-width: 768px) {
       #hero #more-info {
+        max-width: 70%; } }
+  #hero #credits {
+    margin-bottom: 10px;
+    font-weight: 300;
+    max-width: 80%; }
+    @media (min-width: 768px) {
+      #hero #credits {
         max-width: 70%; } }
 
 .gradient-before-morning {
