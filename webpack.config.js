@@ -84,7 +84,15 @@ let config = {
     output: {
         path: path.resolve(__dirname, 'public/assets'),
         filename: '[name].bundle.js'
-    }
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'public'),
+        compress: true,
+        port: 9000,
+        host: '0.0.0.0',
+        disableHostCheck: true,
+        hot: true
+      }
 
 };
 

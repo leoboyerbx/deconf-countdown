@@ -4,13 +4,13 @@ import Granim from 'granim'
 
 const $ = document.querySelector.bind(document)
 
-let data =  {
+let data = {
   year: 2020,
   month: 4,
   day: 11
 }
-fetch('https://gist.githubusercontent.com/leoboyerbx/06ab5c985abcf78b27345b9acea59498/raw/decomptefinement_data.json').then(res => res.json()).then(res => {
-data = res
+window.fetch('https://gist.githubusercontent.com/leoboyerbx/06ab5c985abcf78b27345b9acea59498/raw/decomptefinement_data.json').then(res => res.json()).then(res => {
+  data = res
 })
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hoursNumber = new CountdownNumber($('#hours-number'), 24)
   const minutesNumber = new CountdownNumber($('#minutes-number'), 60)
   const secondsNumber = new CountdownNumber($('#seconds-number'), 60)
-  
+
   function onUpdateCounter (callback) {
     const timespan = countdown(null, new Date(data.year, data.month, data.day), countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS)
     const indexes = ['days', 'hours', 'minutes', 'seconds']
@@ -32,16 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
     minutesNumber.setValue(timespan.minutes)
     secondsNumber.setValue(timespan.seconds)
   }
-  
+
   setInterval(onUpdateCounter, 1000)
-  
+
   // const hero = $('#hero')
   // const currentHour = new Date().getHours()
   // const gradientClass = currentHour < 5 ? 'night' : currentHour < 8 ? 'before-morning' : currentHour < 12 ? 'morning' : currentHour < 18 ? 'afternoon' : currentHour < 21 ? 'evening' : 'night'
   // hero.classList.add('gradient-' + gradientClass)
-  
+
   onUpdateCounter()
-  
+
   // Gradient background
   const background = new Granim({
     element: '#canvas-gradient',
@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
       "before-morning": {
         gradients: [
           ['#A43931', '#1D4350'],
-          ['#646881', '#32746D'],
-          ['#33658A', '#86BBD8']
+          ['#646881', '#A43931'],
+          ['#1D4350', '#646881'],
         ],
         transitionSpeed: 5000
       },
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
           ['#9D50BB', '#6E48AA'],
           ['#4776E6', '#8E54E9']
         ],
-        transitionSpeed: 2000
+        transitionSpeed: 5000
       },
       "orange-state": {
         gradients: [ ['#FF4E50', '#F9D423'] ],
