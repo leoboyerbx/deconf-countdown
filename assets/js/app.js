@@ -3,6 +3,15 @@ import CountdownNumber from './modules/CountdownNumber'
 
 const $ = document.querySelector.bind(document)
 
+let data =  {
+  year: 2020,
+  month: 4,
+  day: 11
+}
+fetch('https://gist.githubusercontent.com/leoboyerbx/06ab5c985abcf78b27345b9acea59498/raw/decomptefinement_data.json').then(res => res.json()).then(res => {
+  data = res
+})
+
 document.addEventListener('DOMContentLoaded', () => {
   const daysNumber = new CountdownNumber($('#days-number'))
   const hoursNumber = new CountdownNumber($('#hours-number'), 24)
@@ -10,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const secondsNumber = new CountdownNumber($('#seconds-number'), 60)
 
   function onUpdateCounter (callback) {
-    const timespan = countdown(null, new Date(2020, 4, 11), countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS)
+    const timespan = countdown(null, new Date(data.year, data.month, data.day), countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS)
     const indexes = ['days', 'hours', 'minutes', 'seconds']
     indexes.forEach(index => {
       if (timespan[index] < 10) {
