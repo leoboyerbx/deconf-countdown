@@ -22,7 +22,7 @@
     color: inherit;
     &:hover {
         background-color: $theme-white;
-        color: $theme-black;
+        color: $theme-black!important;
     }
 }
 .btn-dark {
