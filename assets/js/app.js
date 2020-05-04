@@ -51,24 +51,24 @@ document.addEventListener('DOMContentLoaded', () => {
     isPausedWhenNotInView: true,
     stateTransitionSpeed: 500,
     defaultStateName: 'before-morning',
-    states : {
-      "before-morning": {
+    states: {
+      'before-morning': {
         gradients: [
           ['#A43931', '#1D4350'],
           ['#646881', '#A43931'],
-          ['#1D4350', '#646881'],
+          ['#1D4350', '#646881']
         ],
         transitionSpeed: 5000
       },
-      "violet-state": {
+      'violet-state': {
         gradients: [
           ['#9D50BB', '#6E48AA'],
           ['#4776E6', '#8E54E9']
         ],
         transitionSpeed: 5000
       },
-      "orange-state": {
-        gradients: [ ['#FF4E50', '#F9D423'] ],
+      'orange-state': {
+        gradients: [['#FF4E50', '#F9D423']],
         loop: false
       }
     }

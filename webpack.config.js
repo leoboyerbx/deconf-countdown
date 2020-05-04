@@ -37,7 +37,9 @@ let config = {
             {
                 test: /\.js$/,
                 exclude: /(node_modules)/,
-                use: ['eslint-loader']
+                loader: 'eslint-loader',options: {
+                    fix: true
+                  }
             },
             {
                 test: /\.css$/,
@@ -89,9 +91,9 @@ let config = {
         contentBase: path.join(__dirname, 'public'),
         compress: true,
         port: 9000,
-        host: '0.0.0.0',
         disableHostCheck: true,
-        hot: true
+        hot: true,
+        bonjour: true
       }
 
 };
