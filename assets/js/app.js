@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   onUpdateCounter()
 
   // Gradient background
-  const background = new Granim({
+  window.background = new Granim({
     element: '#canvas-gradient',
     // name: 'canvas-gradient',
     // elToSetClassOn: '#hero',
@@ -60,10 +60,35 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         transitionSpeed: 5000
       },
-      'violet-state': {
+      morning: {
         gradients: [
-          ['#9D50BB', '#6E48AA'],
-          ['#4776E6', '#8E54E9']
+          ['#d3d31c', '#039bc9'],
+          ['#FE4A49', '#d3d31c'],
+          ['#039bc9', '#FE4A49']
+        ],
+        transitionSpeed: 5000
+      },
+      afternoon: {
+        gradients: [
+          ['#DC2430', '#7B4397'],
+          ['#F18F01', '#DC2430'],
+          ['#7B4397', '#F18F01']
+        ],
+        transitionSpeed: 5000
+      },
+      evening: {
+        gradients: [
+          ['#A43931', '#1D4350'],
+          ['#231F20', '#A43931'],
+          ['#1D4350', '#231F20']
+        ],
+        transitionSpeed: 5000
+      },
+      night: {
+        gradients: [
+          ['#283E51', '#4B79A1'],
+          ['#2B193D', '#283E51'],
+          ['#4B79A1', '#2B193D']
         ],
         transitionSpeed: 5000
       },
