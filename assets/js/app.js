@@ -36,14 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(onUpdateCounter, 1000)
 
   // const hero = $('#hero')
-  // const currentHour = new Date().getHours()
-  // const gradientClass = currentHour < 5 ? 'night' : currentHour < 8 ? 'before-morning' : currentHour < 12 ? 'morning' : currentHour < 18 ? 'afternoon' : currentHour < 21 ? 'evening' : 'night'
-  // hero.classList.add('gradient-' + gradientClass)
 
   onUpdateCounter()
 
   // Gradient background
-  window.background = new Granim({
+  const background = new Granim({
     element: '#canvas-gradient',
     // name: 'canvas-gradient',
     // elToSetClassOn: '#hero',
@@ -91,11 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
           ['#4B79A1', '#2B193D']
         ],
         transitionSpeed: 5000
-      },
-      'orange-state': {
-        gradients: [['#FF4E50', '#F9D423']],
-        loop: false
       }
     }
   })
+  const currentHour = new Date().getHours()
+  const gradientClass = currentHour < 5 ? 'night' : currentHour < 8 ? 'before-morning' : currentHour < 12 ? 'morning' : currentHour < 18 ? 'afternoon' : currentHour < 21 ? 'evening' : 'night'
+  background.changeState(gradientClass)
 })
